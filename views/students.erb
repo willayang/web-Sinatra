@@ -1,23 +1,14 @@
 <h1>Students</h1>
-<style type="text/css">
-body 
-{
-background-image:url(/images/bg1.jpg);
-background-repeat:no-repeat;
-background-attachment:fixed
-}
-</style>
+
 <input type="button" onclick="window.location.href='/students/new'" value="create a new student record"/>
 
 <br><br>
+
 <% if @students.any?-%>
 <ul>
 <% @students.each do |student|-%>
 <% student.firstname = "nofirstname" unless student.firstname %>
-<li><a href="/students/<%= student.id%>"><%=("NoFirstName"+" "+ student.lastname if (student.firstname.empty? ) )|| student.firstname + " "+ student.lastname%></a></br></li><br>
-<% end -%>
-</
+<li><a href="/students/<%= student.id%>"><%=("NoFirstName"+" "+ student.lastname if (student.firstname.empty? ) )|| student.firstname + " "+ student.lastname%></a></li><br><% end -%></ul>
 <% else -%>
 <p>No student record have been created yet!</p>
 <% end -%>
-<img alt="students page" src="/images/index2.jpeg"  img align="bottom"/>

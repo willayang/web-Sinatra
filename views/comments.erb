@@ -1,7 +1,9 @@
 <h1>Comments</h1>
 
 <input type="button" onclick="window.location.href='/comments/new'" value="create a new comment"/>
+
 <br><br>
+
 <% if @comment.any?%>
 <ul>
 <% @comment.each do |comment|%>
@@ -10,4 +12,3 @@
 <% end %></ul><% else %>
 <p>no comment yet!!</p>
 <% end %>
-<img alt="about page" src="/images/comments.png" style="float:right"/>
