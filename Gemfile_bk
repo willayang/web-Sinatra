@@ -1,0 +1,14 @@
+source "https://rubygems.org"
+
+ruby "2.3.0"
+
+gem "sinatra", "~> 1.4.7"
+#gem "erb"
+gem "datamapper", :source => "https://rubygems.org/"
+gem "thin"
+gem "dotenv", :source => "https://rubygems.org/"
+gem "sass"
+gem "dm-core"
+gem "dm-migrations"
+gem "sqlite3"
+gem "dm-postgres-adapter"

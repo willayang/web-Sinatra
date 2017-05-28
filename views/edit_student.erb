@@ -1,0 +1,5 @@
+<h1>Edit Student record</h1>
+<form action="/students/<%= @student.id %>" method="POST">
+<input name="_method" type="hidden" value="PUT" />
+<%= erb :student_form %>
+</form>

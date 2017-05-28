@@ -1,0 +1,16 @@
+<label for="name">Name:</label>
+<br>
+<input id="name" name="comment[name]" type="text" value="<%= @comment.name %>" />
+<br>
+<label for="title">Title:</label>
+<br>
+<input id="title" name="comment[title]" type="title" value="<%= @comment.title %>" />
+<br>
+<label for="body">Comment:</label>
+<br>
+<textarea row="4" cols="50" id="body" name="comment[body]"><%= @comment.body %>
+
+</textarea>    
+
+<br><br>
+<input type="submit" value="Save Comment" />

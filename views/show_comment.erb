@@ -1,0 +1,11 @@
+<h1><%=("NoTitle" if (@comment.title.empty? ) )|| @comment.title %>
+</h1><p style="font-size:18px;">Name: <%=("Noname" if (@comment.name.empty? ) )|| @comment.name %></p>
+<P style="font-size:18px;">PostTime: <%= @comment.created_at %></P>
+<pre style="font-size:18px;"><%="Comment:"%><%= @comment.body %>
+
+</pre>
+
+<input type="button" onclick="window.location.href='/comments'" value="back to comments"/>
+
+<form action="/comments/<%= @comment.id %>" method="POST">
+</form>
