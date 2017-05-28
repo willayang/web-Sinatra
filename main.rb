@@ -15,8 +15,8 @@ configure :development do
   DataMapper.setup(:comments, "sqlite3://#{Dir.pwd}/comments.db")#?
 end
 configure :production do
-  DataMapper.setup(:students, ENV['DATABASE_URL'])
-  DataMapper.setup(:comments, ENV['DATABASE_URL'])
+  DataMapper.setup(:students, "#{ENV['DATABASE_URL']}/development.db")
+  DataMapper.setup(:comments, "#{ENV['DATABASE_URL']}/comments.db")
 end
 
 get('/style.css'){scss :styles}
