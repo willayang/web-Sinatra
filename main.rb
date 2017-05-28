@@ -11,7 +11,7 @@ configure do
   set :password, 'sinatra'#login passwords
 end
 configure :development do
-  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")#?
+  DataMapper.setup(:students, "sqlite3://#{Dir.pwd}/development.db")#?
   DataMapper.setup(:comments, "sqlite3://#{Dir.pwd}/comments.db")#?
 end
 configure :production do
