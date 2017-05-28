@@ -12,7 +12,7 @@
 <br>
 <label for="birthday">Date(mm/dd/yyyy):</label>
 <br>
-<input id="birthday" name="student[birthday]" type="text" value="<%= @student.birthday.strftime("%m/%d/%Y") if @student.birthday %>" />
+<input id="birthday" name="student[birthday]" type="text" value="<%= @student.birthday.strftime("%m/%d/%Y") if @student.birthday %>" || "01/01/2012" />
 <br>
 <label for="address">Address:</label>
 <br>
