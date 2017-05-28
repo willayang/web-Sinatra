@@ -7,6 +7,9 @@ require 'dm-migrations'
 class Student
   attr_reader :firstname
   include DataMapper::Resource
+  def self.default_repository_name
+     :students
+  end
   property :id, Serial
   property :idshow, Integer
   property :firstname, String
