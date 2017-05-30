@@ -1,14 +1,13 @@
 <h1>Comments</h1>
 
 <input type="button" onclick="window.location.href='/comments/new'" value="create a new comment"/>
-
 <br><br>
-
 <% if @comment.any?%>
 <ul>
 <% @comment.each do |comment|%>
-<li><a href= "/comments/<%= comment.id %>"><%=("NoName" if (comment.name.empty? ) )||  comment.name %></dr> published on <%= comment.created_at %></a></li>
+<li><a href= "/comments/<%= comment.id %>"><%=("No Comments" if (comment.title.empty? ) )||  comment.title %></dr> created at <%= comment.created_at %></a></li>
 <br>
 <% end %></ul><% else %>
 <p>no comment yet!!</p>
 <% end %>
+<img alt="about page" src="/images/comments.png" style="float:right"/>

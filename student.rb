@@ -38,7 +38,7 @@ end
 
 get '/students/new' do
   #halt(401, 'NOT Authorized') unless session[:admin]
-  if session[:admin] != true#need to login
+  if session[:admin] != true #need to login
      redirect to('/login')
   else 
    @student = Student.new
