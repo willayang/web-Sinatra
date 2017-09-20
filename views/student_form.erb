@@ -1,19 +1,21 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
 <label for="firstname">Firstname:</label>
-<br>
+
 <input id="firstname" name="student[firstname]" type="text" value="<%= @student.firstname  %>"  />
-<br>
+
 <label for="lastname">Lastname:</label>
-<br>
+
 <input id="lastname" name="student[lastname]" type="text" value="<%= @student.lastname %>" />
-<br>
+
 <label for="idshow">ID:</label>
-<br>
+
 <input id="id" name="student[idshow]" type="number" value="<%= @student.idshow %>" />
-<br>
+
 <label for="birthday">Date(mm/dd/yyyy):</label>
-<br>
-<input id="birthday" name="student[birthday]" type="text" value="<%= @student.birthday.strftime("%m/%d/%Y") if @student.birthday %>"/>
-<br>
+
+<input type="date" id="birthday" name="student[birthday]"  value="<%= @student.birthday.strftime("%Y/%m/%d")  if @student.birthday %>"/>
+
 <label for="address">Address:</label>
 <br>
 <textarea  row="2" cols="50" id="address" name="student[address]"><%= @student.address %>
@@ -21,3 +23,4 @@
 <br><br>
 
 <input type="submit" value="Save Student" />
+

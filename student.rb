@@ -2,14 +2,11 @@ require 'dm-core'
 require 'dm-migrations'
 #student firstname, lastname, birthday, address, student id, and other properties you like.
 
-
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")#?
 
 class Student
   attr_reader :firstname
   include DataMapper::Resource
-  def self.default_repository_name
-     :students
-  end
   property :id, Serial
   property :idshow, Integer
   property :firstname, String
@@ -18,9 +15,9 @@ class Student
   property :address, Text
   property :birthday, Date
   #property :type, Discriminator
-  
+=begin
   def birthday=date
-    super Date.strptime(date, '%m/%d/%Y')
+    super Date.strptime(date, '%Y/%m/%d')
   end
 =begin
   def initialize (firstname)
@@ -38,7 +35,7 @@ end
 
 get '/students/new' do
   #halt(401, 'NOT Authorized') unless session[:admin]
-  if session[:admin] != true #need to login
+  if session[:admin] != true#need to login
      redirect to('/login')
   else 
    @student = Student.new
